@@ -4,886 +4,592 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - MiAmor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Create Your Account - MiAmor</title>
 
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Create your MiAmor account today. Get your activation key, sign up, and join the community where you can find love, earn income, and build new skills.">
+    <meta name="keywords" content="register, sign up, create account, MiAmor, activation key">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.miamor-platform.ng/register.html" />
 
-    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.miamor-platform.ng/register.html">
+    <meta property="og:title" content="Create Your Account - MiAmor">
+    <meta property="og:description" content="Join the community where you can find love, earn income, and build new skills.">
+    <meta property="og:image" content="https://i.ibb.co/67K0XvbH/image.png">
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.miamor-platform.ng/register.html">
+    <meta property="twitter:title" content="Create Your Account - MiAmor">
+    <meta property="twitter:description" content="Join the community where you can find love, earn income, and build new skills.">
+    <meta property="twitter:image" content="https://i.ibb.co/67K0XvbH/image.png">
+
+    <!-- Favicon and Manifest -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* INDEX font + background (replace existing style block) */
+        :root {
+            --bg-color: #050816;
+            --surface-color: #0d1124;
+            --primary-color: #2962ff;
+            --secondary-color: #00d4ff;
+            --accent-pink: #e73c7e;
+            --text-color: #eaf2ff;
+            --text-muted: #a0a8c2;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --radius: 16px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        :root {
-            --primary-blue: #0451AB;
-            --light-blue: #4dabf7;
-            --accent-pink: #ff6b6b;
-            --white: #ffffff;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --bg-light: #f8fcff;
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        html, body { height: 100%; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Deep blue gradient background */
-            background: linear-gradient(180deg, #021029 0%, #03294d 45%, #083b6a 100%) fixed;
-            color: var(--text-dark);
-            min-height: 100vh;
-            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            position: relative;
+            overflow-x: hidden;
+            /* Prevents horizontal scroll from aurora */
+            display: flex;
+            align-items: flex-start;
+            /* Aligns form to top for scrollability */
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            /* More vertical space */
         }
 
-        /* Navigation Bar */
+        /* --- AURORA BACKGROUND --- */
 
-        nav {
-            background-color: ;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        .aurora-bg {
             position: fixed;
-            width: 100%;
+            /* Keep background fixed */
             top: 0;
-            z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(45deg, var(--accent-pink), var(--light-blue));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-        }
-
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-        }
-
-        /* Progress Bar */
-
-        .progress-container {
-            max-width: 600px;
-            margin: 120px auto 30px;
-            padding: 0 20px;
-        }
-
-        .progress-steps {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        .progress-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .step-circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #999;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .step-circle.active {
-            background-color: var(--light-blue);
-            color: white;
-        }
-
-        .step-circle.completed {
-            background-color: var(--accent-pink);
-            color: white;
-        }
-
-        .step-title {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            text-align: center;
-        }
-
-        .step-title.active {
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-
-        .progress-line {
-            position: absolute;
-            top: 20px;
             left: 0;
-            right: 0;
-            height: 2px;
-            background-color: #e0e0e0;
-            z-index: 1;
-        }
-
-        .progress-line-fill {
+            width: 100%;
             height: 100%;
-            background-color: var(--light-blue);
-            width: 0%;
-            transition: width 0.3s ease;
+            overflow: hidden;
+            z-index: 0;
         }
 
-        /* Registration Section */
-
-        .register-section {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 20px 50px;
+        .aurora-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.3;
         }
+
+        .aurora-shape.shape1 {
+            width: 500px;
+            height: 500px;
+            background-color: var(--primary-color);
+            top: -10%;
+            left: -15%;
+            animation: moveAurora1 15s alternate infinite ease-in-out;
+        }
+
+        .aurora-shape.shape2 {
+            width: 600px;
+            height: 600px;
+            background-color: var(--secondary-color);
+            bottom: -20%;
+            right: -20%;
+            animation: moveAurora2 20s alternate infinite ease-in-out;
+        }
+
+        .aurora-shape.shape3 {
+            width: 450px;
+            height: 450px;
+            background-color: var(--accent-pink);
+            bottom: 20%;
+            left: 20%;
+            opacity: 0.2;
+            animation: moveAurora3 18s alternate infinite ease-in-out;
+        }
+
+        @keyframes moveAurora1 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100px, 150px);
+            }
+        }
+
+        @keyframes moveAurora2 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-150px, -100px);
+            }
+        }
+
+        @keyframes moveAurora3 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(120px, -180px);
+            }
+        }
+
+        /* --- REGISTRATION CONTAINER --- */
 
         .register-container {
-            background-color: var(--white);
-            border-radius: 15px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 450px;
+            background: rgba(13, 17, 36, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
             padding: 40px;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
+        .register-header {
             text-align: center;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            color: var(--text-light);
             margin-bottom: 30px;
+        }
+
+        .register-header .logo {
+            height: 80px;
+            /* Increased logo size */
+            margin-bottom: 15px;
+        }
+
+        .register-header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .register-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .error-bar {
+            background-color: rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.5);
+            color: #f8d7da;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
             text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .error-bar a {
+            color: #fff;
+            font-weight: 600;
+            text-decoration: underline;
         }
 
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .form-control {
+        .form-input {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            padding: 14px 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-color);
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .form-control:focus {
-            border-color: var(--light-blue);
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-input:focus {
             outline: none;
-            box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.3);
         }
 
-        .access-key-container {
-            display: flex;
-            gap: 10px;
-        }
-
-        .access-key-container .form-control {
-            flex: 1;
-        }
-
-        .btn {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, var(--accent-pink), var(--light-blue));
-            color: white;
-            width: 100%;
-            padding: 15px;
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(77, 171, 247, 0.4);
-        }
-
-        .btn-secondary {
-            background-color: var(--light-blue);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary-blue);
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
+        .key-helper {
+            margin-top: -10px;
             margin-bottom: 20px;
+            text-align: right;
         }
 
-        .checkbox-group input {
-            margin-right: 10px;
-            margin-top: 5px;
+        .key-helper p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .checkbox-group label {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .checkbox-group a {
-            color: var(--primary-blue);
+        .key-helper a {
+            color: var(--secondary-color);
+            font-weight: 500;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .checkbox-group a:hover {
+        .key-helper a:hover {
             text-decoration: underline;
+            color: var(--primary-color);
         }
 
-        /* Account Details Section */
+        /* --- Package Selector Styles --- */
 
-        .payment-details {
-            background-color: rgba(77, 171, 247, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
-        }
-
-        .payment-details h3 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .payment-info {
-            margin-bottom: 10px;
-        }
-
-        .payment-info label {
-            font-weight: 600;
-            color: var(--text-dark);
-            display: inline-block;
-            width: 130px;
-        }
-
-        .payment-info span {
-            color: var(--text-light);
-        }
-
-        .package-details {
-            background-color: rgba(255, 107, 107, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
-        }
-
-        .package-details h3 {
-            color: var(--accent-pink);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+        .package-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            text-align: left;
         }
 
         .package-options {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
-            margin-top: 15px;
         }
 
         .package-option {
-            flex: 1;
+            position: relative;
             padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
 
-        .package-option.selected {
-            border-color: var(--light-blue);
-            background-color: rgba(77, 171, 247, 0.1);
+        .package-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .package-details .package-name {
+            display: block;
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.3;
+        }
+
+        .package-details .package-price {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
         .package-option:hover {
-            border-color: var(--light-blue);
+            border-color: rgba(0, 212, 255, 0.5);
         }
 
-        .package-option h4 {
-            color: var(--primary-blue);
-            margin-bottom: 5px;
+        .package-option.selected {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.3);
         }
 
-        .package-option p {
-            color: var(--text-light);
-            font-size: 0.9rem;
+        #password-toggle {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
-        .notice {
-            background-color: rgba(255, 107, 107, 0.1);
-            border-left: 4px solid var(--accent-pink);
-            padding: 15px;
+        #password-toggle:hover {
+            color: var(--text-color);
+        }
+
+        .terms-text {
+            text-align: center;
             margin-bottom: 25px;
-            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .notice p {
-            color: var(--text-dark);
+        .terms-text .terms-highlight {
+            color: var(--secondary-color);
             font-weight: 500;
         }
 
-        .notice strong {
-            color: var(--accent-pink);
-        }
-
-        /* Payment Confirmation Section */
-
-        .vendor-buttons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .vendor-button {
-            flex: 1;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .submit-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-        }
-
-        .vendor-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .whatsapp-button {
-            background-color: #25D366;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #128C7E;
-        }
-
-        .telegram-button {
-            background-color: #0088cc;
-        }
-
-        .telegram-button:hover {
-            background-color: #0077b5;
-        }
-
-        .instructions {
-            background-color: rgba(77, 171, 247, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
-        }
-
-        .instructions h3 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .instructions ul {
-            list-style-type: none;
-            padding-left: 5px;
-        }
-
-        .instructions li {
-            margin-bottom: 10px;
-            color: var(--text-light);
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .instructions li i {
-            color: var(--light-blue);
-            margin-right: 10px;
-            margin-top: 5px;
-        }
-
-        .button-container {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .button-container .btn {
-            flex: 1;
-        }
-
-        /* Footer */
-
-        footer {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .footer-bottom {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom a {
-            color: var(--light-blue);
-            font-weight: bold;
+            width: 100%;
+            min-height: 52px;
+            padding: 15px;
+            color: #fff;
             text-decoration: none;
-        }
-
-        /* Responsive Design */
-
-        @media (max-width: 768px) {
-            .register-container {
-                padding: 30px 20px;
-            }
-            .section-title {
-                font-size: 1.8rem;
-            }
-            .package-options {
-                flex-direction: column;
-            }
-            .vendor-buttons {
-                flex-direction: column;
-            }
-            .button-container {
-                flex-direction: column;
-            }
-        }
-
-        /* Section Visibility */
-
-        .section {
-            display: none;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        /* Copy button for payment info */
-        .payment-info {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .copy-btn {
-            background: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             border: none;
             cursor: pointer;
-            color: var(--primary-blue);
-            font-size: 0.95rem;
-            padding: 4px;
-            border-radius: 4px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            background: var(--gradient);
+            background-size: 200% auto;
+            position: relative;
+            overflow: hidden;
         }
-        .copy-btn i {
-            font-size: 0.95rem;
+
+        .submit-btn:hover:not(:disabled) {
+            background-position: right center;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(41, 98, 255, 0.4);
         }
-        .copy-btn.copied {
-            color: var(--accent-pink);
+
+        .submit-btn:disabled {
+            cursor: not-allowed;
+            background-position: left center;
+            transform: translateY(0);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .submit-btn .btn-loader {
+            display: none;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .submit-btn.loading .btn-text {
+            visibility: hidden;
+        }
+
+        .submit-btn.loading .btn-loader {
+            display: block;
+            position: absolute;
+        }
+
+        .bottom-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .bottom-link a {
+            color: var(--secondary-color);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .bottom-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 15px;
+            }
+            .register-container {
+                padding: 30px 25px;
+            }
+            .register-header h1 {
+                font-size: 1.6rem;
+            }
+            .register-header .logo {
+                height: 60px;
+            }
+            .form-input {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+            .submit-btn {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <!-- replace the logo block with your actual logo image -->
-            <a href="index.html" class="logo" title="MiAmor" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-                <img src="logo.png" alt="MiAmor Logo" style="height:40px; width:auto; display:block;">
-                <div class="logo-text" style="font-size:1.8rem; font-weight:700; color:var(--primary-blue);">MiAmor</div>
-            </a>
-        </div>
-    </nav>
-
-    <!-- Progress Bar -->
-    <div class="progress-container">
-        <div class="progress-steps">
-            <div class="progress-step">
-                <div class="step-circle active" id="step1-circle">1</div>
-                <div class="step-title active">Registration</div>
-            </div>
-            <div class="progress-step">
-                <div class="step-circle" id="step2-circle">2</div>
-                <div class="step-title">Account Details</div>
-            </div>
-            <div class="progress-step">
-                <div class="step-circle" id="step3-circle">3</div>
-                <div class="step-title">Confirmation</div>
-            </div>
-            <div class="progress-line">
-                <div class="progress-line-fill" id="progress-fill"></div>
-            </div>
-        </div>
+    <div class="aurora-bg">
+        <div class="aurora-shape shape1"></div>
+        <div class="aurora-shape shape2"></div>
+        <div class="aurora-shape shape3"></div>
     </div>
 
-    <!-- Registration Section -->
-    <section class="register-section">
-        <div class="register-container">
-            <!-- Step 1: Registration Form -->
-            <div class="section active" id="registration-section">
-                <h2 class="section-title">Create Account</h2>
-                <p class="section-subtitle">Join MiAmor today and start earning while you chat</p>
-
-                <form id="registrationForm">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" class="form-control" placeholder="Choose a username" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" class="form-control" placeholder="Create a password" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phoneNumber">Phone Number</label>
-                        <input type="tel" id="phoneNumber" class="form-control" placeholder="Enter your phone number" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="accessKey">Access Key</label>
-                        <div class="access-key-container">
-                            <input type="text" id="accessKey" class="form-control" placeholder="Enter your access key" required>
-                            <button type="button" class="btn btn-secondary" id="getCode">Get Code</button>
-                        </div>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="terms" required>
-                        <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
-                    </div>
-
-                    <button type="button" class="btn btn-primary" id="nextToAccount">Sign Up</button>
-                </form>
+    <div class="register-container">
+        <div class="register-header">
+            <a href="index.html"><img src="logo.png" alt="MiAmor Logo" class="logo"></a>
+            <h1>Create Your Account</h1>
+            <p>Join our community and start earning!</p>
+        </div>
+        <div id="error-message" class="error-bar" style="display: none;"></div>
+        <form id="register-form">
+            <div class="form-group">
+                <input type="text" id="fullname" class="form-input" placeholder="Full Name" required>
             </div>
-
-            <!-- Step 2: Account Details -->
-            <div class="section" id="account-section">
-                <h2 class="section-title">Activate your MiAmor account</h2>
-                <p class="section-subtitle">Send your payment confirmation to our vendor</p>
-
-                <div class="payment-details">
-                    <h3>Account Details for Payment</h3>
-                    <div class="payment-info">
-                        <label>Account Name:</label>
-                        <span id="accountName">John Ayodeji</span>
-                        <button type="button" class="copy-btn" data-copy-target="accountName" title="Copy">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                    <div class="payment-info">
-                        <label>Account Number:</label>
-                        <span id="accountNumber">7650457087</span>
-                        <button type="button" class="copy-btn" data-copy-target="accountNumber" title="Copy">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                    <div class="payment-info">
-                        <label>Bank:</label>
-                        <span id="bankName">WEMA</span>
-                        <button type="button" class="copy-btn" data-copy-target="bankName" title="Copy">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="package-details">
-                    <h3>Package Details</h3>
-                    <p>Choose your preferred package:</p>
-                    <div class="package-options">
-                        <div class="package-option" data-plan="plus" style="border: 1px solid #ccc; padding: 15px; border-radius: 10px; text-align: center; background: #f9f9ff;">
-                            <h4 style="margin-bottom: 8px; font-size: 18px; color: #18327c;">MiAmor Plus</h4>
-                            <p style="margin: 0; font-size: 14px; color: #999; text-decoration: line-through;">₦17,000</p>
-                            <p style="margin: 0; font-size: 20px; font-weight: bold; color: #18327c;">₦10,000</p>
-                        </div>
-
-                        <div class="package-option" data-plan="ultra" style="border: 1px solid #ccc; padding: 15px; border-radius: 10px; text-align: center; background: #f9f9ff;">
-                            <h4 style="margin-bottom: 8px; font-size: 18px; color: #18327c;">MiAmor Ultra</h4>
-                            <p style="margin: 0; font-size: 14px; color: #999; text-decoration: line-through;">₦27,000</p>
-                            <p style="margin: 0; font-size: 20px; font-weight: bold; color: #18327c;">₦14,000</p>
-                        </div>
-                    </div>
-
-                    <input type="hidden" id="selectedPlan" value="plus">
-                </div>
-
-                <div class="button-container">
-                    <button type="button" class="btn btn-secondary" id="backToRegistration">Back</button>
-                    <button type="button" class="btn btn-primary" id="nextToConfirmation">Next</button>
-                </div>
+            <div class="form-group">
+                <input type="email" id="email" class="form-input" placeholder="Email" required>
             </div>
-
-            <!-- Step 3: Payment Confirmation -->
-            <div class="section" id="confirmation-section">
-                <h2 class="section-title">After payment, send a screenshot to your vendor for confirmation. You will get your access code when payment is confirmed by our vendor.</h2>
-
-
-                <div class="vendor-buttons">
-                    <a href="https://wa.me/23458581209?text=Hi%2C%20I%20want%20to%20confirm%20my%20MiAmor%20payment." class="vendor-button whatsapp-button">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Vendor
-                    </a>
-
-                </div>
-
-                <div class="instructions">
-                    <h3>Include the following details in your message:</h3>
-                    <ul>
-                        <li><i class="fas fa-user"></i> Your full name</li>
-                        <li><i class="fas fa-image"></i> Screenshot of payment</li>
-                        <li><i class="fas fa-at"></i> Username</li>
-                        <li><i class="fas fa-credit-card"></i> Plan</li>
-                    </ul>
-                </div>
-
+            <div class="form-group">
+                <input type="text" id="username" class="form-input" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <p class="package-label">Choose Your Package</p>
                 <div class="package-options">
-                    <div class="package-option">
-                        <h4>MiAmor Plus</h4>
-                        <p>₦10,000</p>
-                    </div>
-                    <div class="package-option">
-                        <h4>MiAmor Ultra</h4>
-                        <p>₦14,000</p>
-                    </div>
-                </div>
-
-                <div class="button-container">
-                    <button type="button" class="btn btn-secondary" id="backToAccount">Back</button>
-                    <button type="button" class="btn btn-primary" id="completeRegistration">Complete</button>
+                    <label class="package-option" for="package-plus">
+                        <input type="radio" id="package-plus" name="package" value="plus" checked>
+                        <div class="package-details">
+                            <span class="package-name">MiAmor Plus</span>
+                            <span class="package-price">₦10,000</span>
+                        </div>
+                    </label>
+                    <label class="package-option" for="package-ultra">
+                        <input type="radio" id="package-ultra" name="package" value="ultra">
+                        <div class="package-details">
+                            <span class="package-name">MiAmor Ultra</span>
+                            <span class="package-price">₦14,000</span>
+                        </div>
+                    </label>
                 </div>
             </div>
+            <div class="form-group">
+                <input type="password" id="password" class="form-input" placeholder="Password" required>
+                <i class="fas fa-eye" id="password-toggle"></i>
+            </div>
+            <div class="form-group">
+                <input type="tel" id="phone" class="form-input" placeholder="Phone" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="activation-key" class="form-input" placeholder="Activation Key" required>
+            </div>
+            <div class="key-helper">
+                <p>Don't have a key? <a href="merchant.html">Click here.</a></p>
+            </div>
+            <div class="terms-text">
+                <p>By signing up, you agree to our <span class="terms-highlight">Terms of Service</span>.</p>
+            </div>
+            <button type="submit" class="submit-btn">
+                <span class="btn-text">Create Account</span>
+                <span class="btn-loader"></span>
+            </button>
+        </form>
+        <div class="bottom-link">
+            <p>Already have an account? <a href="#">Log In</a></p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-bottom">
-            <p>&copy; 2025 MiAmor. All rights reserved.</p>
-        </div>
-    </footer>
+        
+    </div>
 
     <script>
-        // Copy to clipboard functionality for payment info (all copy buttons)
-        document.querySelectorAll('.copy-btn').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const targetId = this.getAttribute('data-copy-target');
-                const el = document.getElementById(targetId);
-                const text = el ? el.innerText.trim() : '';
-                if (!text) return;
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordInput = document.getElementById('password');
+            const passwordToggle = document.getElementById('password-toggle');
+            const registerForm = document.getElementById('register-form');
+            const errorMessage = document.getElementById('error-message');
+            const allInputs = registerForm.querySelectorAll('.form-input, .package-option input');
 
-                // try navigator.clipboard, fallback to execCommand
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(text).then(() => {
-                        this.title = "Copied!";
-                        this.classList.add('copied');
-                        setTimeout(() => {
-                            this.title = "Copy";
-                            this.classList.remove('copied');
-                        }, 1200);
-                    }).catch(() => {
-                        // fallback below
-                        fallbackCopy(text, this);
+            // Package Selector Logic
+            const packageOptions = document.querySelectorAll('.package-option');
+            packageOptions.forEach(option => {
+                const radio = option.querySelector('input[type="radio"]');
+                radio.addEventListener('change', () => {
+                    packageOptions.forEach(opt => {
+                        const r = opt.querySelector('input[type="radio"]');
+                        if (r.checked) {
+                            opt.classList.add('selected');
+                        } else {
+                            opt.classList.remove('selected');
+                        }
                     });
-                } else {
-                    fallbackCopy(text, this);
-                }
-            });
-        });
-
-        function fallbackCopy(text, button) {
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            ta.style.position = 'fixed';
-            ta.style.left = '-9999px';
-            document.body.appendChild(ta);
-            ta.select();
-            try {
-                document.execCommand('copy');
-                button.title = "Copied!";
-                button.classList.add('copied');
-                setTimeout(() => {
-                    button.title = "Copy";
-                    button.classList.remove('copied');
-                }, 1200);
-            } catch (e) { /* ignore */ }
-            document.body.removeChild(ta);
-        }
-
-        // Package selection
-        const packageOptions = document.querySelectorAll('.package-option');
-        const selectedPlanInput = document.getElementById('selectedPlan');
-
-        packageOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                packageOptions.forEach(opt => opt.classList.remove('selected'));
-                option.classList.add('selected');
-                selectedPlanInput.value = option.dataset.plan;
-            });
-        });
-
-        // Navigation between sections
-        const sections = document.querySelectorAll('.section');
-        const stepCircles = document.querySelectorAll('.step-circle');
-        const stepTitles = document.querySelectorAll('.step-title');
-        const progressFill = document.getElementById('progress-fill');
-
-        function showSection(sectionId) {
-            // Hide all sections
-            sections.forEach(section => {
-                section.classList.remove('active');
+                });
             });
 
-            // Show the selected section
-            document.getElementById(sectionId).classList.add('active');
-
-            // Update progress indicators
-            updateProgress(sectionId);
-        }
-
-        function updateProgress(sectionId) {
-            let stepNumber = 0;
-
-            if (sectionId === 'registration-section') {
-                stepNumber = 1;
-            } else if (sectionId === 'account-section') {
-                stepNumber = 2;
-            } else if (sectionId === 'confirmation-section') {
-                stepNumber = 3;
+            // Set initial selected state
+            const initiallyCheckedRadio = document.querySelector('.package-option input[type="radio"]:checked');
+            if (initiallyCheckedRadio) {
+                initiallyCheckedRadio.closest('.package-option').classList.add('selected');
             }
 
-            // Update step circles and titles
-            stepCircles.forEach((circle, index) => {
-                if (index < stepNumber) {
-                    circle.classList.add('completed');
-                    circle.classList.remove('active');
-                } else if (index === stepNumber - 1) {
-                    circle.classList.add('active');
-                    circle.classList.remove('completed');
-                } else {
-                    circle.classList.remove('active', 'completed');
-                }
-            });
-
-            stepTitles.forEach((title, index) => {
-                if (index === stepNumber - 1) {
-                    title.classList.add('active');
-                } else {
-                    title.classList.remove('active');
-                }
-            });
-
-            // Update progress bar
-            const progressPercentage = ((stepNumber - 1) / 2) * 100;
-            progressFill.style.width = `${progressPercentage}%`;
-        }
-
-        // Button event listeners
-        document.getElementById('getCode').addEventListener('click', () => {
-            // Navigate to account activation section
-            showSection('account-section');
-        });
-
-        document.getElementById('nextToAccount').addEventListener('click', () => {
-            // Validate form
-            const form = document.getElementById('registrationForm');
-            if (form.checkValidity()) {
-                showSection('account-section');
-            } else {
-                form.reportValidity();
+            // Password Visibility Toggle
+            if (passwordToggle && passwordInput) {
+                passwordToggle.addEventListener('click', () => {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    passwordToggle.classList.toggle('fa-eye');
+                    passwordToggle.classList.toggle('fa-eye-slash');
+                });
             }
-        });
 
-        document.getElementById('backToRegistration').addEventListener('click', () => {
-            showSection('registration-section');
-        });
+            // Function to hide the error message
+            const hideError = () => {
+                if (errorMessage.style.display !== 'none') {
+                    errorMessage.style.display = 'none';
+                }
+            };
 
-        document.getElementById('nextToConfirmation').addEventListener('click', () => {
-            showSection('confirmation-section');
-        });
+            // Hide error when user starts typing/changing form
+            allInputs.forEach(input => {
+                input.addEventListener('input', hideError);
+                input.addEventListener('change', hideError);
+            });
 
-        document.getElementById('backToAccount').addEventListener('click', () => {
-            showSection('account-section');
-        });
+            // Form Submission Logic
+            if (registerForm) {
+                const submitBtn = registerForm.querySelector('.submit-btn');
 
-        document.getElementById('completeRegistration').addEventListener('click', () => {
-            // Redirect to WhatsApp link
-            window.open('https://wa.me/2348149690184?text=Hi%2C%20I%20want%20to%20confirm%20my%20MiAmor%20payment.', '_blank');
+                registerForm.addEventListener('submit', (event) => {
+                    event.preventDefault();
+
+                    hideError();
+
+                    submitBtn.classList.add('loading');
+                    submitBtn.disabled = true;
+
+                    // Simulate API call delay
+                    setTimeout(() => {
+                        submitBtn.classList.remove('loading');
+                        submitBtn.disabled = false;
+
+                        // Show the inline error message
+                        errorMessage.innerHTML = 'Invalid activation key. Please double check your key or <a href="merchant.html">Buy a new key here</a>.';
+                        errorMessage.style.display = 'block';
+
+                        // Scroll the error message into view for better visibility
+                        errorMessage.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }, 3000);
+                });
+            }
         });
     </script>
 </body>
 
 </html>
-
