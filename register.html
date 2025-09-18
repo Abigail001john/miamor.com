@@ -234,22 +234,45 @@
             margin-bottom: 20px;
             text-align: right;
         }
-
         .key-helper p {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
+            font-weight: 700; /* make the message bold */
+            margin: 0;
         }
 
-        .key-helper a {
-            color: var(--secondary-color);
-            font-weight: 500;
+        /* Button-like link for the key helper — match .submit-btn style (smaller inline version) */
+        .key-btn {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 8px 14px;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
-            transition: color 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+            transition: all 0.35s ease;
+            background: var(--gradient);
+            background-size: 200% auto;
+            background-position: left center;
+            position: relative;
+            line-height: 1;
         }
 
-        .key-helper a:hover {
-            text-decoration: underline;
-            color: var(--primary-color);
+        .key-btn:hover,
+        .key-btn:focus {
+            background-position: right center;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(41, 98, 255, 0.36);
+            outline: none;
+        }
+
+        /* Respect reduced-motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .key-btn {
+                transition: none !important;
+            }
         }
 
         /* --- Package Selector Styles --- */
@@ -489,7 +512,9 @@
                 <input type="text" id="activation-key" class="form-input" placeholder="Activation Key" required>
             </div>
             <div class="key-helper">
-                <p>Don't have a key? <a href="merchant.html">Click here.</a></p>
+                <p><strong>Don't have a key?</strong>
+                    <a href="merchant.html" class="key-btn" role="button">Click here</a>
+                </p>
             </div>
             <div class="terms-text">
                 <p>By signing up, you agree to our <span class="terms-highlight">Terms of Service</span>.</p>
